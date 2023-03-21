@@ -21,7 +21,7 @@
     background: var(--background-color);
     font-size: 1.6rem;
   }
-  
+
   .container {
     display: flex;
     height: 100vh;
@@ -38,7 +38,7 @@
     border-radius: 0.6rem;
   }
   
-  .hero h1 {
+  .hero h1, h2 {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -78,7 +78,7 @@
     border-radius: 0.4rem;
   }
   
-  .hero button {
+  form button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,9 +98,34 @@
     transition: background-color 0.3s;
   }
   
-  .hero button:hover {
+  form button:hover {
     background-color: var(--hover-and-text-color);
   }
+
+  .modalWrapper{
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    display: none;
+    
+  }
+  
+
+  .modalWrapper button{
+    background: none;
+    border: none;
+    display: flex;
+    
+  }
+
+  #modal{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+
   
   @media screen and (max-width: 768px) {
     .hero {
