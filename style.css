@@ -38,11 +38,16 @@
 
     visibility: hidden;
     opacity: 0;
+
+    transform: translateY(-30px);
+    transition: transform .5s;
   }
 
   .alertBox.open{
     visibility: visible;
     opacity: 1;
+    transform: translateY(0);
+
   }
 
   h3{
@@ -131,6 +136,8 @@
     border-radius: 0.4rem;
     border: 0;
     transition: background-color 0.3s;
+
+    cursor: pointer;
   }
   
   form button:hover {
