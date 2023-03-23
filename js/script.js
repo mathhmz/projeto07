@@ -1,10 +1,7 @@
 import {Modal} from "./modal.js"
-
+import { alertBox } from "./alert.js"
 import * as input from "./vars.js"
-
-function IMC (weight, height) {
-    return (weight / ((height /100) ** 2 )).toFixed(2)
-}
+import * as util from "./utils.js"
 
 function handleSubmit (event) {
     event.preventDefault()
@@ -12,13 +9,21 @@ function handleSubmit (event) {
     const weight = input.weight.value
     const height = input.height.value
 
-    const result = IMC(weight,height)
-    const message = `Seu IMC é de ${result}`
-    Modal.message.innerText = message
+    const weightOrHeightIsNotANumber = util.notNumber(weight) || util.notNumber(height)
 
-    Modal.open()
+    if(weightOrHeightIsNotANumber){
+        alertBox.open()
+        return
+    }
+
+    alertBox.close()
     
+    const result = util.IMC(weight,height)
+
+    util.displayResultMessage(result)
 }
+
+
 
 input.form.onsubmit = handleSubmit
 
