@@ -23,7 +23,7 @@ function handleSubmit (event) {
     util.displayResultMessage(result)
 }
 
-
+input.form.oninput = () => alertBox.close()
 
 input.form.onsubmit = handleSubmit
 
